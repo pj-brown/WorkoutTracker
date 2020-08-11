@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
-const db = require("./models");
+// const db = require("./models");
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGOATLAS_URI || "mongodb://localhost/fitnessTracker", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGOATLAS_URI || "mongodb://localhost/workout", { useNewUrlParser: true, useUnifiedTopology: true });
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
